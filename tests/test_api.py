@@ -1,7 +1,7 @@
 import os,tempfile
 db=tempfile.NamedTemporaryFile(suffix=".db",delete=False);db.close()
 os.environ["DATABASE_URL"]="sqlite:///"+db.name
-os.environ["AUTH_DISABLED"]="true
+os.environ["AUTH_DISABLED"]="true"
 from fastapi.testclient import TestClient
 from app.main import app
 c=TestClient(app)
