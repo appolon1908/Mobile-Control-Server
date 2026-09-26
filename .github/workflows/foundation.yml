@@ -1,13 +1,15 @@
-﻿name: foundation
+name: server-ci
 on:
   push:
   pull_request:
 jobs:
-  validate:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate foundation
-        run: |
-          test -s README.md
-          test -s SECURITY.md
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: pytest -q
