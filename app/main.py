@@ -1,11 +1,13 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 from datetime import datetime, timezone
 from typing import Any
 from uuid import uuid4
 from fastapi import FastAPI, Header, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 app = FastAPI(title="Codestra Mobile Control Server", version="0.1.0")
+app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173"], allow_credentials=False, allow_methods=["GET","POST","PUT","OPTIONS"], allow_headers=["Authorization","Content-Type","X-Actor"])
 devices: dict[str, dict[str, Any]] = {}
 commands: dict[str, list[dict[str, Any]]] = {}
 policies: dict[str, dict[str, Any]] = {}
