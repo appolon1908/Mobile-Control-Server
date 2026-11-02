@@ -35,7 +35,7 @@
       "repository": "appolon1908/Mobile-Control-Server",
       "required_checks": [
         {
-          "context": "documentation-contract-source",
+          "context": "documentation-contract-source-v2",
           "integration_id": 15368,
           "workflow": ".github/workflows/source-scope.yml"
         }
