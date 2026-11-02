@@ -1,0 +1,46 @@
+{
+  "application_source_allowed": false,
+  "authority_hashes": {
+    "AGENTS.md": "9461f1ebfc5bb1cb04de6dbf92445f23c2e2038537bc6b0f1ecc07ee22f69a64"
+  },
+  "baseline_files": [
+    "AGENTS.md",
+    "README.md",
+    "docs/ARCHITECTURE-CHARTS.md"
+  ],
+  "repository": "appolon1908/Mobile-Control-Server",
+  "required_text": {},
+  "schema_version": 1,
+  "scope": "documentation-contract-only",
+  "structured_files": {
+    "governance/interim-release-policy.json": {
+      "authorization_date": "2026-11-02",
+      "note": "GitHub rulesets remain the enforcement authority. Documentation/contract-only validation denies application sources until vetted product CI is separately reviewed; it does not certify runtime or authorize deployment.",
+      "policy_kind": "source_merge",
+      "preserve": [
+        "other_required_checks",
+        "review_requirements",
+        "ref_conditions",
+        "bypass_actors",
+        "enforcement",
+        "force_push_protection",
+        "deletion_protection",
+        "deployment_authority"
+      ],
+      "production_activation_authorized": false,
+      "replaces_contexts": [
+        "codestra-control-plane",
+        "codestra/control-plane"
+      ],
+      "repository": "appolon1908/Mobile-Control-Server",
+      "required_checks": [
+        {
+          "context": "documentation-contract-source",
+          "integration_id": 15368,
+          "workflow": ".github/workflows/source-scope.yml"
+        }
+      ],
+      "schema_version": 1
+    }
+  }
+}
